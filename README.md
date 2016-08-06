@@ -21,8 +21,12 @@ import CouchDBRealmSync
 let replicationManager = ReplicationManager(realm: realm!)
 replicationManager.register(Dog.self)
 let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:couchdbport", username: "couchdbuser", password: "pwd", db: "dogs")
-replicationManager.pull(dogsEndpoint, target: Dog.self).start()
-replicationManager.push(Dog.self, target: dogsEndpoint).start()
+
+replicationManager.pull(dogsEndpoint, target: Dog.self).start({ (result) in
+})
+
+replicationManager.push(Dog.self, target: dogsEndpoint).start({ (result) in
+})
 ```
 
 ## Breakdown
