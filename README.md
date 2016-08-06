@@ -52,7 +52,7 @@ replicationManager.register(Dog.self)
 ```
 
 Note: this method of registering Realm objects requires that your objects expose a primary key field using Realm's class `primaryKey()` function.
-If your existing Realm objects do not override this function and you cannot change your Realm object you need to create or extend `RealmObjectManager` and register that with the replication manager.
+If your existing Realm objects do not override this function and you cannot change your Realm objects you need to create or extend `RealmObjectManager` and register that with the replication manager.
 See below for more details.
 
 Create a CouchDB endpoint:
@@ -165,11 +165,15 @@ The CouchDBRealmSync library has the concept of a "RealmObjectManager".
 We can create custom RealmObjectManagers that have more control over the format sent to CouchDB (and a few other things).
 Without an object manager you register your intent to sync a Realm collection as so:
 
-`replicationManager.register(LocationObject.self)`
+```
+replicationManager.register(LocationObject.self)
+```
 
 If you create a custom RealmObjectManager, for example `LocationObjectManager` you register like so:
 
-`replicationManager.register(LocationObjectManager())`
+```
+replicationManager.register(LocationObjectManager())
+```
 
 LocationObjectManager looks something like this:
 
@@ -226,11 +230,11 @@ Now when we sync a LocationObject it looks like this in Cloudant and geo indexes
 
 Use this library with caution. It is still very experimental and has the following known limitations:
 
-1. Deletes are not supported
-2. Conflict resolution has not been implemented
-3. During a pull or push replication all documents are processed at once (not in batches like other sync libraries)
+1. Deletes are not supported.
+2. Conflict resolution has not been implemented.
+3. During a pull or push replication all documents are processed at once (not in batches like other sync libraries).
 4. Threading restrictions - right now we require that the Realm be created in the main thread.
-5. Testing - There has been very little testing and no unit tests have been written
+5. Testing - There has been very little testing and no unit tests have been written.
 
 ## License
 
