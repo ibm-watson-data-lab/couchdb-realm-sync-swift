@@ -47,7 +47,7 @@ See below for more details.
 
 Create a CouchDB endpoint:
 
-`let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:couchdbport", username: "couchdbuser", password: "pwd", db: "dogs")`
+`let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:port", username: "user", password: "pwd", db: "dogs")`
 
 To pull data from CouchDB into your local Realm datastore run `pull` on the replication manager:
 
