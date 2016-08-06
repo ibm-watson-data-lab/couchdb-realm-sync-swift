@@ -48,20 +48,28 @@ replicationManager.register(Dog.self)
 ```
 
 Note: this method of registering Realm objects requires that your objects expose a primary key field using Realm's class `primaryKey()` function.
-If your existing Realm objects do not override this function and you cannot change your Realm object you can create or extend `RealmObjectManager`.
+If your existing Realm objects do not override this function and you cannot change your Realm object you need to create or extend `RealmObjectManager` and register that with the replication manager.
 See below for more details.
 
 Create a CouchDB endpoint:
 
 `let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:port", username: "user", password: "pwd", db: "dogs")`
 
-To pull data from CouchDB into your local Realm datastore run `pull` on the replication manager:
+To pull data from CouchDB into your local Realm datastore run pull on the replication manager:
 
-`replicationManager.pull(dogsEndpoint, target: Dog.self).start()`
+```
+replicationManager.pull(dogsEndpoint, target: Dog.self).start({ (result) in
+	// see ReplicationResult
+})
+```
 
-To push data from your local Realm datastore to CouchDB run `push` on the replication manager:
+To push data from your local Realm datastore to CouchDB run push on the replication manager:
 
-`replicationManager.push(Dog.self, target: dogsEndpoint).start()`
+```
+replicationManager.push(Dog.self, target: dogsEndpoint).start({ (result) in
+	// see ReplicationResult
+})
+```
 
 ## Example
 
