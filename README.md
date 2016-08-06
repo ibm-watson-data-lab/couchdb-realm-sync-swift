@@ -22,7 +22,7 @@ let replicationManager = ReplicationManager(realm: realm!)
 
 replicationManager.register(Dog.self)
 
-let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:couchdbport", username: "couchdbuser", password: "pwd", db: "dogs")
+let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:port", username: "user", password: "pwd", db: "dogs")
 
 replicationManager.pull(dogsEndpoint, target: Dog.self).start({ (result) in
 })
@@ -35,11 +35,15 @@ replicationManager.push(Dog.self, target: dogsEndpoint).start({ (result) in
 
 Import CouchDBRealmSync in your Realm app:
 
-`import CouchDBRealmSync`
+```
+import CouchDBRealmSync
+```
 
-Initialize an instance of `ReplicationManager` with your Realm instance:
+Create and initialize a replication manager with your Realm instance:
 
-`var replicationManager = ReplicationManager(realm: realm!)`
+```
+var replicationManager = ReplicationManager(realm: realm!)
+```
 
 Register your Realm objects with the replication manager:
 
@@ -53,7 +57,9 @@ See below for more details.
 
 Create a CouchDB endpoint:
 
-`let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:port", username: "user", password: "pwd", db: "dogs")`
+```
+let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:port", username: "user", password: "pwd", db: "dogs")
+```
 
 To pull data from CouchDB into your local Realm datastore run pull on the replication manager:
 
