@@ -19,7 +19,9 @@ Sync your Realm objects with just a few lines of code:
 import CouchDBRealmSync
 
 let replicationManager = ReplicationManager(realm: realm!)
+
 replicationManager.register(Dog.self)
+
 let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:couchdbport", username: "couchdbuser", password: "pwd", db: "dogs")
 
 replicationManager.pull(dogsEndpoint, target: Dog.self).start({ (result) in
