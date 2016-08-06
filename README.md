@@ -2,37 +2,41 @@
 
 This is an Experimental Swift library for syncing data between local Realm datastores and CouchDB.
 
+Use with caution!
+
 # Quick Start Using CocoaPods
 
-Add CouchDBRealmSync to your Podfile and install:
+* Add CouchDBRealmSync to your Podfile and install:
 
-`pod "CouchDBRealmSync", :git => "https://github.com/ibm-cds-labs/couchdb-realm-sync-swift.git"`
-`pod install`
+```
+pod "CouchDBRealmSync", :git => "https://github.com/ibm-cds-labs/couchdb-realm-sync-swift.git"
+pod install
+```
 
-Import CouchDBRealmSync in your Realm app:
+* Import CouchDBRealmSync in your Realm app:
 
 `import CouchDBRealmSync`
 
-Initialize an instance of `ReplicationManager` with your Realm instance:
+* Initialize an instance of `ReplicationManager` with your Realm instance:
 
 `var replicationManager = ReplicationManager(realm: realm!)`
 
-Register your Realm objects with the replication manager:
+* Register your Realm objects with the replication manager:
 
 `replicationManager.register(Cat.self)`
 `replicationManager.register(Dog.self)`
 
 Note: this method of registering Realm objects requires that your objects expose a primary key field using Realm's class `primaryKey()` function.
 
-Create a CouchDB endpoint:
+* Create a CouchDB endpoint:
 
 `let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:couchdbport", username: "couchdbuser", password: "pwd", db: "dogs")`
 
-To pull data from CouchDB into your local Realm datastore run `pull` on the replication manager:
+* To pull data from CouchDB into your local Realm datastore run `pull` on the replication manager:
 
 `replicationManager.pull(dogsEndpoint, target: Dog.self).start()`
 
-To push data from your local Realm datastore run `push` on the replication manager:
+* To push data from your local Realm datastore to CouchDB run `push` on the replication manager:
 
 `replicationManager.push(Dog.self, target: dogsEndpoint).start()`
 
@@ -179,8 +183,9 @@ Now when we sync a LocationObject it looks like this in Cloudant and geo indexes
     "type": "Point"
   }
 }
+```
 
-## Limitations
+## Known Limitations
 
 Use this library with caution. It is still very experimental and has the following known limitations:
 
