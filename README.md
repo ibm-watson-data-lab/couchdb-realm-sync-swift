@@ -4,39 +4,56 @@ This is an Experimental Swift library for syncing data between local Realm datas
 
 Use with caution!
 
-# Quick Start Using CocoaPods
+## Quick Start Using CocoaPods
 
-* Add CouchDBRealmSync to your Podfile and install:
+Add CouchDBRealmSync to your Podfile and install:
 
 ```
 pod "CouchDBRealmSync", :git => "https://github.com/ibm-cds-labs/couchdb-realm-sync-swift.git"
 pod install
 ```
 
-* Import CouchDBRealmSync in your Realm app:
+Sync your Realm objects with just a few lines of code:
+
+```
+import CouchDBRealmSync
+
+let replicationManager = ReplicationManager(realm: realm!)
+replicationManager.register(Dog.self)
+let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:couchdbport", username: "couchdbuser", password: "pwd", db: "dogs")
+replicationManager.pull(dogsEndpoint, target: Dog.self).start()
+replicationManager.push(Dog.self, target: dogsEndpoint).start()
+```
+
+## Breakdown
+
+Import CouchDBRealmSync in your Realm app:
 
 `import CouchDBRealmSync`
 
-* Initialize an instance of `ReplicationManager` with your Realm instance:
+Initialize an instance of `ReplicationManager` with your Realm instance:
 
 `var replicationManager = ReplicationManager(realm: realm!)`
 
-* Register your Realm objects with the replication manager:
+Register your Realm objects with the replication manager:
 
-`replicationManager.register(Cat.self)`
-`replicationManager.register(Dog.self)`
+```
+replicationManager.register(Dog.self)
+```
 
 Note: this method of registering Realm objects requires that your objects expose a primary key field using Realm's class `primaryKey()` function.
+If your existing Realm objects do not override this function and you cannot change your Realm object you can create or extend `RealmObjectManager`.
+See below for more details.
 
-* Create a CouchDB endpoint:
+Create a CouchDB endpoint:
 
 `let dogsEndpoint = CouchDBEndpoint(baseUrl: "https://couchdbhost:couchdbport", username: "couchdbuser", password: "pwd", db: "dogs")`
 
-* To pull data from CouchDB into your local Realm datastore run `pull` on the replication manager:
+To pull data from CouchDB into your local Realm datastore run `pull` on the replication manager:
 
 `replicationManager.pull(dogsEndpoint, target: Dog.self).start()`
 
-* To push data from your local Realm datastore to CouchDB run `push` on the replication manager:
+To push data from your local Realm datastore to CouchDB run `push` on the replication manager:
 
 `replicationManager.push(Dog.self, target: dogsEndpoint).start()`
 
