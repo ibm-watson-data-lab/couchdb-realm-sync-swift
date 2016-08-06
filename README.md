@@ -79,7 +79,7 @@ replicationManager.push(Dog.self, target: dogsEndpoint).start({ (result) in
 
 ## Example
 
-See the [Realm version of the Location Tracker app](https://github.com/ibm-cds-labs/location-tracker-client-swift). The Location Tracker app stores and syncs location information with IBM Cloudant.
+See the [Realm version of the Location Tracker app](https://github.com/ibm-cds-labs/location-tracker-client-swift-realm). The Location Tracker app stores and syncs location information with IBM Cloudant.
 
 ## How it works
 
