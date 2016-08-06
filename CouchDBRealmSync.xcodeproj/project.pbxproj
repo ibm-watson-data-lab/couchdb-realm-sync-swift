@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D713478F1D51449300BE5EEC /* RealmObjectChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713478E1D51449300BE5EEC /* RealmObjectChanges.swift */; };
+		D71347911D5144A700BE5EEC /* CouchDBDocRev.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71347901D5144A700BE5EEC /* CouchDBDocRev.swift */; };
+		D71A18381D5222A300B32F33 /* CouchDBDocMissingRevs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A18371D5222A300B32F33 /* CouchDBDocMissingRevs.swift */; };
+		D71A183C1D522AFA00B32F33 /* ReplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A183B1D522AFA00B32F33 /* ReplicationManager.swift */; };
+		D71A183E1D52422800B32F33 /* RealmObjectCouchDBSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A183D1D52422800B32F33 /* RealmObjectCouchDBSequence.swift */; };
+		D71A18401D5242C900B32F33 /* RealmObjectCouchDBSequenceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A183F1D5242C900B32F33 /* RealmObjectCouchDBSequenceTracker.swift */; };
+		D71A18421D5252DB00B32F33 /* ReplicationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A18411D5252DB00B32F33 /* ReplicationResult.swift */; };
+		D71A18441D527CFC00B32F33 /* CouchDBBulkDocsReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A18431D527CFC00B32F33 /* CouchDBBulkDocsReq.swift */; };
+		D71A18461D527E1C00B32F33 /* CouchDBBulkDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A18451D527E1C00B32F33 /* CouchDBBulkDoc.swift */; };
+		D71A18481D527E8300B32F33 /* CouchDBBulkDocRev.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A18471D527E8300B32F33 /* CouchDBBulkDocRev.swift */; };
+		D71A184A1D52873300B32F33 /* RealmObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A18491D52873300B32F33 /* RealmObjectExtensions.swift */; };
+		D74EB3DD1D50F26B0087DBBB /* CouchDBRealmSync.h in Headers */ = {isa = PBXBuildFile; fileRef = D74EB3DC1D50F26B0087DBBB /* CouchDBRealmSync.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D74EB3E41D50F26B0087DBBB /* CouchDBRealmSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74EB3D91D50F26B0087DBBB /* CouchDBRealmSync.framework */; };
+		D74EB3E91D50F26B0087DBBB /* CouchDBRealmSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74EB3E81D50F26B0087DBBB /* CouchDBRealmSyncTests.swift */; };
+		D74EB3F91D50F3410087DBBB /* CouchDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74EB3F31D50F3410087DBBB /* CouchDBClient.swift */; };
+		D74EB3FA1D50F3410087DBBB /* CouchDBEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74EB3F41D50F3410087DBBB /* CouchDBEndpoint.swift */; };
+		D74EB3FB1D50F3410087DBBB /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74EB3F51D50F3410087DBBB /* CryptoUtils.swift */; };
+		D74EB3FC1D50F3410087DBBB /* PullReplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74EB3F61D50F3410087DBBB /* PullReplicator.swift */; };
+		D74EB3FD1D50F3410087DBBB /* PushReplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74EB3F71D50F3410087DBBB /* PushReplicator.swift */; };
+		D74EB3FE1D50F3410087DBBB /* Replicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74EB3F81D50F3410087DBBB /* Replicator.swift */; };
+		D74EB4081D51027C0087DBBB /* RealmObjectCouchDBDocMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74EB4071D51027C0087DBBB /* RealmObjectCouchDBDocMap.swift */; };
+		D74EB40C1D5105CF0087DBBB /* RealmObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74EB40B1D5105CF0087DBBB /* RealmObjectManager.swift */; };
+		D7C1C8851D538D1F003B5CCA /* CouchDBChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1C8841D538D1F003B5CCA /* CouchDBChanges.swift */; };
+		D7C1C8871D538FD9003B5CCA /* CouchDBChangeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1C8861D538FD9003B5CCA /* CouchDBChangeRow.swift */; };
+		EDE79694D4E566D107222555 /* Pods_CouchDBRealmSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A79F888CED4479A9866E601 /* Pods_CouchDBRealmSync.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D74EB3E51D50F26B0087DBBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D74EB3D01D50F26B0087DBBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D74EB3D81D50F26B0087DBBB;
+			remoteInfo = CouchDBRealmSync;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		41CC0BF2B2F44D23D3EF4DE3 /* Pods-CouchDBRealmSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchDBRealmSync.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CouchDBRealmSync/Pods-CouchDBRealmSync.debug.xcconfig"; sourceTree = "<group>"; };
+		4A519C907E33533760307134 /* Pods-CouchDBRealmSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchDBRealmSync.release.xcconfig"; path = "Pods/Target Support Files/Pods-CouchDBRealmSync/Pods-CouchDBRealmSync.release.xcconfig"; sourceTree = "<group>"; };
+		5A79F888CED4479A9866E601 /* Pods_CouchDBRealmSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchDBRealmSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D713478E1D51449300BE5EEC /* RealmObjectChanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjectChanges.swift; sourceTree = "<group>"; };
+		D71347901D5144A700BE5EEC /* CouchDBDocRev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouchDBDocRev.swift; sourceTree = "<group>"; };
+		D71A18371D5222A300B32F33 /* CouchDBDocMissingRevs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouchDBDocMissingRevs.swift; sourceTree = "<group>"; };
+		D71A183B1D522AFA00B32F33 /* ReplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplicationManager.swift; sourceTree = "<group>"; };
+		D71A183D1D52422800B32F33 /* RealmObjectCouchDBSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjectCouchDBSequence.swift; sourceTree = "<group>"; };
+		D71A183F1D5242C900B32F33 /* RealmObjectCouchDBSequenceTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjectCouchDBSequenceTracker.swift; sourceTree = "<group>"; };
+		D71A18411D5252DB00B32F33 /* ReplicationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplicationResult.swift; sourceTree = "<group>"; };
+		D71A18431D527CFC00B32F33 /* CouchDBBulkDocsReq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouchDBBulkDocsReq.swift; sourceTree = "<group>"; };
+		D71A18451D527E1C00B32F33 /* CouchDBBulkDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouchDBBulkDoc.swift; sourceTree = "<group>"; };
+		D71A18471D527E8300B32F33 /* CouchDBBulkDocRev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouchDBBulkDocRev.swift; sourceTree = "<group>"; };
+		D71A18491D52873300B32F33 /* RealmObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjectExtensions.swift; sourceTree = "<group>"; };
+		D74EB3D91D50F26B0087DBBB /* CouchDBRealmSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CouchDBRealmSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D74EB3DC1D50F26B0087DBBB /* CouchDBRealmSync.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CouchDBRealmSync.h; sourceTree = "<group>"; };
+		D74EB3DE1D50F26B0087DBBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D74EB3E31D50F26B0087DBBB /* CouchDBRealmSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CouchDBRealmSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D74EB3E81D50F26B0087DBBB /* CouchDBRealmSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouchDBRealmSyncTests.swift; sourceTree = "<group>"; };
+		D74EB3EA1D50F26B0087DBBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D74EB3F31D50F3410087DBBB /* CouchDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouchDBClient.swift; sourceTree = "<group>"; };
+		D74EB3F41D50F3410087DBBB /* CouchDBEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouchDBEndpoint.swift; sourceTree = "<group>"; };
+		D74EB3F51D50F3410087DBBB /* CryptoUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoUtils.swift; sourceTree = "<group>"; };
+		D74EB3F61D50F3410087DBBB /* PullReplicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullReplicator.swift; sourceTree = "<group>"; };
+		D74EB3F71D50F3410087DBBB /* PushReplicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushReplicator.swift; sourceTree = "<group>"; };
+		D74EB3F81D50F3410087DBBB /* Replicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Replicator.swift; sourceTree = "<group>"; };
+		D74EB4071D51027C0087DBBB /* RealmObjectCouchDBDocMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjectCouchDBDocMap.swift; sourceTree = "<group>"; };
+		D74EB40B1D5105CF0087DBBB /* RealmObjectManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjectManager.swift; sourceTree = "<group>"; };
+		D7C1C8841D538D1F003B5CCA /* CouchDBChanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouchDBChanges.swift; sourceTree = "<group>"; };
+		D7C1C8861D538FD9003B5CCA /* CouchDBChangeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouchDBChangeRow.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D74EB3D51D50F26B0087DBBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE79694D4E566D107222555 /* Pods_CouchDBRealmSync.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D74EB3E01D50F26B0087DBBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D74EB3E41D50F26B0087DBBB /* CouchDBRealmSync.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B67507876668CB3A5A3CE11F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41CC0BF2B2F44D23D3EF4DE3 /* Pods-CouchDBRealmSync.debug.xcconfig */,
+				4A519C907E33533760307134 /* Pods-CouchDBRealmSync.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D74EB3CF1D50F26B0087DBBB = {
+			isa = PBXGroup;
+			children = (
+				D74EB3DB1D50F26B0087DBBB /* CouchDBRealmSync */,
+				D74EB3E71D50F26B0087DBBB /* CouchDBRealmSyncTests */,
+				D74EB3DA1D50F26B0087DBBB /* Products */,
+				B67507876668CB3A5A3CE11F /* Pods */,
+				E69C8B7465F4C58C20A452A2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D74EB3DA1D50F26B0087DBBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D74EB3D91D50F26B0087DBBB /* CouchDBRealmSync.framework */,
+				D74EB3E31D50F26B0087DBBB /* CouchDBRealmSyncTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D74EB3DB1D50F26B0087DBBB /* CouchDBRealmSync */ = {
+			isa = PBXGroup;
+			children = (
+				D7C1C8831D538628003B5CCA /* Model */,
+				D74EB4011D50F3980087DBBB /* Replication */,
+				D74EB4001D50F3900087DBBB /* CouchDB */,
+				D74EB3FF1D50F3510087DBBB /* Util */,
+				D74EB3DC1D50F26B0087DBBB /* CouchDBRealmSync.h */,
+				D74EB3DE1D50F26B0087DBBB /* Info.plist */,
+			);
+			path = CouchDBRealmSync;
+			sourceTree = "<group>";
+		};
+		D74EB3E71D50F26B0087DBBB /* CouchDBRealmSyncTests */ = {
+			isa = PBXGroup;
+			children = (
+				D74EB3E81D50F26B0087DBBB /* CouchDBRealmSyncTests.swift */,
+				D74EB3EA1D50F26B0087DBBB /* Info.plist */,
+			);
+			path = CouchDBRealmSyncTests;
+			sourceTree = "<group>";
+		};
+		D74EB3FF1D50F3510087DBBB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D74EB3F51D50F3410087DBBB /* CryptoUtils.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		D74EB4001D50F3900087DBBB /* CouchDB */ = {
+			isa = PBXGroup;
+			children = (
+				D71A18451D527E1C00B32F33 /* CouchDBBulkDoc.swift */,
+				D71A18471D527E8300B32F33 /* CouchDBBulkDocRev.swift */,
+				D71A18431D527CFC00B32F33 /* CouchDBBulkDocsReq.swift */,
+				D7C1C8861D538FD9003B5CCA /* CouchDBChangeRow.swift */,
+				D7C1C8841D538D1F003B5CCA /* CouchDBChanges.swift */,
+				D74EB3F31D50F3410087DBBB /* CouchDBClient.swift */,
+				D71A18371D5222A300B32F33 /* CouchDBDocMissingRevs.swift */,
+				D71347901D5144A700BE5EEC /* CouchDBDocRev.swift */,
+				D74EB3F41D50F3410087DBBB /* CouchDBEndpoint.swift */,
+			);
+			name = CouchDB;
+			sourceTree = "<group>";
+		};
+		D74EB4011D50F3980087DBBB /* Replication */ = {
+			isa = PBXGroup;
+			children = (
+				D74EB3F61D50F3410087DBBB /* PullReplicator.swift */,
+				D74EB3F71D50F3410087DBBB /* PushReplicator.swift */,
+				D74EB3F81D50F3410087DBBB /* Replicator.swift */,
+				D71A183B1D522AFA00B32F33 /* ReplicationManager.swift */,
+				D71A18411D5252DB00B32F33 /* ReplicationResult.swift */,
+			);
+			name = Replication;
+			sourceTree = "<group>";
+		};
+		D7C1C8831D538628003B5CCA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D713478E1D51449300BE5EEC /* RealmObjectChanges.swift */,
+				D71A18491D52873300B32F33 /* RealmObjectExtensions.swift */,
+				D74EB40B1D5105CF0087DBBB /* RealmObjectManager.swift */,
+				D74EB4071D51027C0087DBBB /* RealmObjectCouchDBDocMap.swift */,
+				D71A183D1D52422800B32F33 /* RealmObjectCouchDBSequence.swift */,
+				D71A183F1D5242C900B32F33 /* RealmObjectCouchDBSequenceTracker.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E69C8B7465F4C58C20A452A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A79F888CED4479A9866E601 /* Pods_CouchDBRealmSync.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D74EB3D61D50F26B0087DBBB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D74EB3DD1D50F26B0087DBBB /* CouchDBRealmSync.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D74EB3D81D50F26B0087DBBB /* CouchDBRealmSync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D74EB3ED1D50F26B0087DBBB /* Build configuration list for PBXNativeTarget "CouchDBRealmSync" */;
+			buildPhases = (
+				5C88E8FB0736CC40CE00107F /* 📦 Check Pods Manifest.lock */,
+				D74EB3D41D50F26B0087DBBB /* Sources */,
+				D74EB3D51D50F26B0087DBBB /* Frameworks */,
+				D74EB3D61D50F26B0087DBBB /* Headers */,
+				D74EB3D71D50F26B0087DBBB /* Resources */,
+				EA6C617149A58CEDFE76CC31 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CouchDBRealmSync;
+			productName = CouchDBRealmSync;
+			productReference = D74EB3D91D50F26B0087DBBB /* CouchDBRealmSync.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D74EB3E21D50F26B0087DBBB /* CouchDBRealmSyncTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D74EB3F01D50F26B0087DBBB /* Build configuration list for PBXNativeTarget "CouchDBRealmSyncTests" */;
+			buildPhases = (
+				D74EB3DF1D50F26B0087DBBB /* Sources */,
+				D74EB3E01D50F26B0087DBBB /* Frameworks */,
+				D74EB3E11D50F26B0087DBBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D74EB3E61D50F26B0087DBBB /* PBXTargetDependency */,
+			);
+			name = CouchDBRealmSyncTests;
+			productName = CouchDBRealmSyncTests;
+			productReference = D74EB3E31D50F26B0087DBBB /* CouchDBRealmSyncTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D74EB3D01D50F26B0087DBBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "IBM CDS Labs";
+				TargetAttributes = {
+					D74EB3D81D50F26B0087DBBB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					D74EB3E21D50F26B0087DBBB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D74EB3D31D50F26B0087DBBB /* Build configuration list for PBXProject "CouchDBRealmSync" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D74EB3CF1D50F26B0087DBBB;
+			productRefGroup = D74EB3DA1D50F26B0087DBBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D74EB3D81D50F26B0087DBBB /* CouchDBRealmSync */,
+				D74EB3E21D50F26B0087DBBB /* CouchDBRealmSyncTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D74EB3D71D50F26B0087DBBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D74EB3E11D50F26B0087DBBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C88E8FB0736CC40CE00107F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA6C617149A58CEDFE76CC31 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouchDBRealmSync/Pods-CouchDBRealmSync-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D74EB3D41D50F26B0087DBBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D74EB3FE1D50F3410087DBBB /* Replicator.swift in Sources */,
+				D71A18421D5252DB00B32F33 /* ReplicationResult.swift in Sources */,
+				D74EB3F91D50F3410087DBBB /* CouchDBClient.swift in Sources */,
+				D71A18481D527E8300B32F33 /* CouchDBBulkDocRev.swift in Sources */,
+				D71A18461D527E1C00B32F33 /* CouchDBBulkDoc.swift in Sources */,
+				D74EB40C1D5105CF0087DBBB /* RealmObjectManager.swift in Sources */,
+				D71A184A1D52873300B32F33 /* RealmObjectExtensions.swift in Sources */,
+				D71A18401D5242C900B32F33 /* RealmObjectCouchDBSequenceTracker.swift in Sources */,
+				D74EB3FD1D50F3410087DBBB /* PushReplicator.swift in Sources */,
+				D7C1C8871D538FD9003B5CCA /* CouchDBChangeRow.swift in Sources */,
+				D74EB3FA1D50F3410087DBBB /* CouchDBEndpoint.swift in Sources */,
+				D74EB4081D51027C0087DBBB /* RealmObjectCouchDBDocMap.swift in Sources */,
+				D71347911D5144A700BE5EEC /* CouchDBDocRev.swift in Sources */,
+				D7C1C8851D538D1F003B5CCA /* CouchDBChanges.swift in Sources */,
+				D71A183E1D52422800B32F33 /* RealmObjectCouchDBSequence.swift in Sources */,
+				D71A18381D5222A300B32F33 /* CouchDBDocMissingRevs.swift in Sources */,
+				D713478F1D51449300BE5EEC /* RealmObjectChanges.swift in Sources */,
+				D74EB3FB1D50F3410087DBBB /* CryptoUtils.swift in Sources */,
+				D74EB3FC1D50F3410087DBBB /* PullReplicator.swift in Sources */,
+				D71A183C1D522AFA00B32F33 /* ReplicationManager.swift in Sources */,
+				D71A18441D527CFC00B32F33 /* CouchDBBulkDocsReq.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D74EB3DF1D50F26B0087DBBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D74EB3E91D50F26B0087DBBB /* CouchDBRealmSyncTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D74EB3E61D50F26B0087DBBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D74EB3D81D50F26B0087DBBB /* CouchDBRealmSync */;
+			targetProxy = D74EB3E51D50F26B0087DBBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D74EB3EB1D50F26B0087DBBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D74EB3EC1D50F26B0087DBBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D74EB3EE1D50F26B0087DBBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CC0BF2B2F44D23D3EF4DE3 /* Pods-CouchDBRealmSync.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CouchDBRealmSync/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cds.labs.CouchDBRealmSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D74EB3EF1D50F26B0087DBBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A519C907E33533760307134 /* Pods-CouchDBRealmSync.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CouchDBRealmSync/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cds.labs.CouchDBRealmSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D74EB3F11D50F26B0087DBBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CouchDBRealmSyncTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cdslabs.CouchDBRealmSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D74EB3F21D50F26B0087DBBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CouchDBRealmSyncTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cdslabs.CouchDBRealmSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D74EB3D31D50F26B0087DBBB /* Build configuration list for PBXProject "CouchDBRealmSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D74EB3EB1D50F26B0087DBBB /* Debug */,
+				D74EB3EC1D50F26B0087DBBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D74EB3ED1D50F26B0087DBBB /* Build configuration list for PBXNativeTarget "CouchDBRealmSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D74EB3EE1D50F26B0087DBBB /* Debug */,
+				D74EB3EF1D50F26B0087DBBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D74EB3F01D50F26B0087DBBB /* Build configuration list for PBXNativeTarget "CouchDBRealmSyncTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D74EB3F11D50F26B0087DBBB /* Debug */,
+				D74EB3F21D50F26B0087DBBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D74EB3D01D50F26B0087DBBB /* Project object */;
+}
