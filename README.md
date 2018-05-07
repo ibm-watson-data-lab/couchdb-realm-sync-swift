@@ -1,3 +1,5 @@
+:no_entry_sign: This project is no longer maintained
+
 # CouchDB Realm Sync Library
 
 This is an Experimental Swift library for syncing data between local Realm datastores and CouchDB.
